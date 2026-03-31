@@ -8,7 +8,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false; 
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/koru-shopmall-app">
     <App />
   </BrowserRouter>,
 )
