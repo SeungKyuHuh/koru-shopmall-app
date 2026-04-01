@@ -9,9 +9,8 @@ const ProductAll = () => {
     let url = 'https://69cbed010b417a19e07b846e.mockapi.io/shopmall/products';
     let res = await fetch(url);
     let data = await res.json();
-console.log(11)
+
     setProductList(data);
-    console.log(data)
   }
 
   useEffect(()=>{
