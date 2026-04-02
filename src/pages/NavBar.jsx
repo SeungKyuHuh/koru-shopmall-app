@@ -18,7 +18,7 @@ const NavBar = ({authenticate, setAuthenticate}) => {
     const search = (event) => {
         if(event.key === "Enter"){
             let keyword = event.target.value;
-            navigate(`/?title_contains=${keyword}`);
+            navigate(`/?q=${keyword}`);
         }
     }
 
