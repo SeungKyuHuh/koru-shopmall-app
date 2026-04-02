@@ -26,14 +26,29 @@ const NavBar = ({authenticate, setAuthenticate}) => {
         navigate('/');
     }
 
+    const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div>
+
+        <div className={`side-menu ${menuOpen ? "open" : ""}`}>
+        <div className="close-btn" onClick={() => setMenuOpen(false)}>✕</div>
+            <ul>
+                {menuList.map(menu => (
+                <li key={menu}>{menu}</li>
+                ))}
+            </ul>
+        </div>
+
         <div>
             <div className="login-botton" onClick={gotoLogin}>
                 <FontAwesomeIcon icon={faUser} />
                 <div>{authenticate === true ? '로그아웃' : '로그인'}</div>
             </div>
         </div>
+        <div className="mobile-menu-icon" onClick={() => setMenuOpen(true)}>
+        ☰
+        </div>        
         <div className="nav-section">
             <img onClick={gotoHome} width={100} src="https://assets.turbologo.com/blog/en/2021/07/07050018/hm-color-logo.png"></img>
         </div>
