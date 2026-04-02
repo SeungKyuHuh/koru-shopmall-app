@@ -25,6 +25,7 @@ const NavBar = ({authenticate, setAuthenticate}) => {
     const gotoHome = () => {
         navigate('/');
     }
+    
 
   return (
     <div>

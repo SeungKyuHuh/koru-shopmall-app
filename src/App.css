@@ -130,3 +130,47 @@
   font-size: 18px;  
 }
 
+.menu-list {
+  display: flex;
+}
+
+.mobile-menu-icon {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .menu-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-box {
+    position: static;   
+    width: 80%;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .product-container {
+    flex-direction: column;   
+    height: auto;             
+  }
+
+  .product-image {
+    width: 100%;
+  }
+
+  .product-image img {
+    height: auto;             
+  }
+
+  .product-info {
+    width: 100%;
+    padding: 20px;            
+  }  
+}
