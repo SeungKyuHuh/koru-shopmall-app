@@ -5,8 +5,8 @@ const ProductCard = ({item}) => {
 
   const navigate = useNavigate();
   const showDetail = () => {
-    console.log(item);
-    navigate(`/product/${item.id}`, {state: item});
+    //navigate(`/product/${item.id}`, {state: item});
+    navigate(`/product/${item.id}`);
   }  
 
   return (

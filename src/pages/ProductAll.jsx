@@ -2,20 +2,25 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import ProductCard from '../component/ProductCard';
 import { Col, Container, Row } from 'react-bootstrap';
+import { useSearchParams } from 'react-router-dom';
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([]);
+  const [query, setQuery] = useSearchParams();
   const getProducts = async() => {
-    let url = 'https://69cbed010b417a19e07b846e.mockapi.io/shopmall/products';
+    let searchQuery = query.get('title_contains')||"";
+    console.log("쿼리:", searchQuery);
+    let url = `https://my-json-server.typicode.com/SeungKyuHuh/koru-shopmall-app/products?title_contains=${searchQuery}`;
     let res = await fetch(url);
     let data = await res.json();
 
+    //console.log("data:", data);
     setProductList(data);
   }
 
   useEffect(()=>{
     getProducts();
-  }, [])
+  }, [query])
   return (
     <div>
       <Container>

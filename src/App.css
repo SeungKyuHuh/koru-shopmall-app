@@ -10,6 +10,10 @@
   justify-content: center;
 }
 
+.nav-section img {
+  cursor: pointer;
+}
+
 .menu-list{
   display: flex;
   list-style-type: none;
