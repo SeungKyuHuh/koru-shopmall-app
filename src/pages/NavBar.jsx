@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faMagnifyingGlass  } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 
 const NavBar = ({authenticate, setAuthenticate}) => {
     const menuList = ['여성', 'Divided', '남성', '신생아/유아', 'H&M Home', 'Sale', '지속가능성'];
+    const [menuOpen, setMenuOpen] = useState(false);
     const navigate = useNavigate();
     const gotoLogin = () => {
         if(authenticate === true){
@@ -39,7 +41,13 @@ const NavBar = ({authenticate, setAuthenticate}) => {
             <img onClick={gotoHome} width={100} src="https://assets.turbologo.com/blog/en/2021/07/07050018/hm-color-logo.png"></img>
         </div>
         <div className="menu-area">
-            <ul className="menu-list">
+            <div 
+            className="mobile-menu-icon"
+            onClick={() => setMenuOpen(!menuOpen)}
+            >
+            ☰
+            </div>
+            <ul className={`menu-list ${menuOpen ? "active" : ""}`}>
                 {menuList.map(menu => 
                 <li>{menu}</li>
                 )}
